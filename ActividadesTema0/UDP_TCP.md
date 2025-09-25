@@ -1,4 +1,4 @@
-# Actividad 0.2 - UDP y TCP: Comparativa de Protocolos de Transporte
+# Actividad 0.2 - UDP y TCP
 
 ## 1. Diferencias entre UDP y TCP
 
@@ -58,3 +58,4 @@ El **three-way handshake** es el proceso utilizado por TCP para establecer una c
 3. **ACK:** El cliente envía un paquete ACK para establecer la conexión.  
 
 Este proceso asegura que ambos lados están listos para la comunicación y que la conexión es fiable.
+
