@@ -1,110 +1,112 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Actividad 0.1 - HTTP Introduction</title>
-</head>
-<body>
-  <h1>Actividad 0.1 - HTTP Introduction</h1>
+# Actividad 0.1 - HTTP Introduction
 
-  <h2>1. ¿Quién, dónde y cuándo se crea el primer servidor web?</h2>
-  <ul>
-    <li><strong>Quién</strong>: Tim Berners-Lee, con ayuda de Ari Luotonen y Henrik Frystyk Nielsen.</li>
-    <li><strong>Dónde</strong>: CERN (Suiza).</li>
-    <li><strong>Cuándo</strong>: Alrededor de 1990. La primera versión pública fue en 1991.</li>
-  </ul>
+## 1. ¿Quién, dónde y cuándo se crea el primer servidor web?
 
-  <h2>2. ¿Qué es la pila de protocolos usada por HTTP?</h2>
-  <p>La pila de protocolos en la que se basa HTTP incluye:</p>
-  <ul>
-    <li><strong>Aplicación</strong>: HTTP</li>
-    <li><strong>Transporte</strong>: TCP (Transmission Control Protocol)</li>
-    <li><strong>Red</strong>: IP (Internet Protocol)</li>
-    <li><strong>Enlace / Física</strong>: Ethernet, Wi-Fi, etc.</li>
-    <li>En el caso de HTTPS, se añade: <strong>TLS/SSL</strong> entre HTTP y TCP</li>
-  </ul>
+- **Quién**: Tim Berners-Lee, con ayuda de Ari Luotonen y Henrik Frystyk Nielsen.  
+- **Dónde**: CERN (Suiza).  
+- **Cuándo**: Alrededor de 1990. La primera versión pública fue en 1991.  
 
-  <h2>3. Componentes de una URL</h2>
-  <p>Ejemplo de URL:</p>
-  <pre>https://www.ejemplo.com:8080/ruta/pagina.html?var=valor#ancla</pre>
-  <p>Componentes:</p>
-  <ol>
-    <li><strong>Esquema (protocolo)</strong>: https</li>
-    <li><strong>Host (dominio)</strong>: www.ejemplo.com</li>
-    <li><strong>Puerto</strong>: 8080 (opcional)</li>
-    <li><strong>Ruta (path)</strong>: /ruta/pagina.html</li>
-    <li><strong>Cadena de consulta (query)</strong>: ?var=valor (opcional)</li>
-    <li><strong>Fragmento (anchor)</strong>: #ancla (opcional)</li>
-  </ol>
+---
 
-  <h2>4. Pasos en la recuperación de una página web mediante HTTP</h2>
-  <ol>
-    <li>El navegador resuelve el dominio a una IP (DNS).</li>
-    <li>Establece conexión TCP (o TLS si es HTTPS).</li>
-    <li>Envía una solicitud HTTP (método + ruta + encabezados).</li>
-    <li>El servidor procesa la solicitud y genera una respuesta HTTP.</li>
-    <li>El navegador recibe y procesa la respuesta.</li>
-    <li>Si hay recursos adicionales (CSS, JS, imágenes), el navegador hace nuevas solicitudes.</li>
-    <li>Finalmente, se renderiza la página en el navegador.</li>
-  </ol>
+## 2. ¿Qué es la pila de protocolos usada por HTTP?
 
-  <h2>5. Diferencia entre páginas dinámicas y estáticas</h2>
-  <ul>
-    <li><strong>Estáticas</strong>: Contenido fijo, no cambia entre usuarios ni peticiones. Se sirve tal como está guardado.</li>
-    <li><strong>Dinámicas</strong>: Generadas en tiempo real en el servidor. El contenido puede variar según el usuario, parámetros, o datos de una base de datos.</li>
-  </ul>
+La pila de protocolos en la que se basa HTTP incluye:
 
-  <h2>6. ¿Cómo usar Telnet para acceder a un servidor web?</h2>
-  <pre><code>telnet www.ejemplo.com 80</code></pre>
-  <p>Una vez conectado, escribir:</p>
-  <pre><code>GET / HTTP/1.1
-Host: www.ejemplo.com
+- **Aplicación**: HTTP  
+- **Transporte**: TCP (Transmission Control Protocol)  
+- **Red**: IP (Internet Protocol)  
+- **Enlace / Física**: Ethernet, Wi-Fi, etc.  
+- En el caso de HTTPS, se añade: **TLS/SSL** entre HTTP y TCP  
 
-</code></pre>
-  <p>(Línea en blanco al final para finalizar el encabezado).</p>
+---
 
-  <h2>7. Request - Métodos principales</h2>
-  <ul>
-    <li><strong>GET</strong>: Obtener un recurso.</li>
-    <li><strong>POST</strong>: Enviar datos al servidor.</li>
-    <li><strong>PUT</strong>: Reemplazar o crear un recurso.</li>
-    <li><strong>DELETE</strong>: Eliminar un recurso.</li>
-    <li><strong>HEAD</strong>: Igual que GET, pero solo devuelve los encabezados.</li>
-    <li><strong>OPTIONS</strong>: Consultar los métodos permitidos para un recurso.</li>
-  </ul>
+## 3. Componentes de una URL
 
-  <h2>8. Response - Códigos</h2>
-  <p>Categorías:</p>
-  <ul>
-    <li><strong>1xx</strong>: Informativos</li>
-    <li><strong>2xx</strong>: Éxito</li>
-    <li><strong>3xx</strong>: Redirecciones</li>
-    <li><strong>4xx</strong>: Errores del cliente</li>
-    <li><strong>5xx</strong>: Errores del servidor</li>
-  </ul>
-  <p>Ejemplos comunes:</p>
-  <ul>
-    <li>200 OK</li>
-    <li>301 Moved Permanently</li>
-    <li>302 Found</li>
-    <li>400 Bad Request</li>
-    <li>401 Unauthorized</li>
-    <li>403 Forbidden</li>
-    <li>404 Not Found</li>
-    <li>500 Internal Server Error</li>
-    <li>503 Service Unavailable</li>
-  </ul>
+Ejemplo de URL:
+https://www.ejemplo.com:8080/ruta/pagina.html
 
-  <h2>9. Content-Type - Tipos principales</h2>
-  <ul>
-    <li><code>text/html</code> - Documentos HTML</li>
-    <li><code>text/plain</code> - Texto sin formato</li>
-    <li><code>text/css</code> - Hojas de estilo</li>
-    <li><code>application/javascript</code> - JavaScript</li>
-    <li><code>application/json</code> - Datos en formato JSON</li>
-    <li><code>application/xml</code> - XML</li>
-    <li><code>image/png</code>, <code>image/jpeg</code>, <code>image/gif</code> - Imágenes</li>
-    <li><code>multipart/form-data</code> - Formularios con archivos adjuntos</li>
-  </ul>
-</body>
-</html>
+---
+
+Componentes:
+
+1. **Esquema (protocolo)**: https  
+2. **Host (dominio)**: www.ejemplo.com  
+3. **Puerto**: 8080 (opcional)  
+4. **Ruta (path)**: /ruta/pagina.html  
+5. **Cadena de consulta (query)**: ?var=valor (opcional)  
+6. **Fragmento (anchor)**: #ancla (opcional)  
+
+---
+
+## 4. Pasos en la recuperación de una página web mediante HTTP
+
+1. El navegador resuelve el dominio a una IP (DNS).  
+2. Establece conexión TCP (o TLS si es HTTPS).  
+3. Envía una solicitud HTTP (método + ruta + encabezados).  
+4. El servidor procesa la solicitud y genera una respuesta HTTP.  
+5. El navegador recibe y procesa la respuesta.  
+6. Si hay recursos adicionales (CSS, JS, imágenes), el navegador hace nuevas solicitudes.  
+7. Finalmente, se renderiza la página en el navegador.  
+
+---
+
+## 5. Diferencia entre páginas dinámicas y estáticas
+
+- **Estáticas**: Contenido fijo, no cambia entre usuarios ni peticiones. Se sirve tal como está guardado.  
+- **Dinámicas**: Generadas en tiempo real en el servidor. El contenido puede variar según el usuario, parámetros, o datos de una base de datos.  
+
+---
+
+## 6. ¿Cómo usar Telnet para acceder a un servidor web?
+telnet www.ejemplo.com 80
+Una vez conectado, escribir:
+  GET / HTTP/1.1
+  Host: www.ejemplo.com
+
+---
+
+## 7. Request - Métodos principales
+
+- **GET**: Obtener un recurso.  
+- **POST**: Enviar datos al servidor.  
+- **PUT**: Reemplazar o crear un recurso.  
+- **DELETE**: Eliminar un recurso.  
+- **HEAD**: Igual que GET, pero solo devuelve los encabezados.  
+- **OPTIONS**: Consultar los métodos permitidos para un recurso.  
+
+---
+
+## 8. Response - Códigos
+
+Categorías:
+
+- **1xx**: Informativos  
+- **2xx**: Éxito  
+- **3xx**: Redirecciones  
+- **4xx**: Errores del cliente  
+- **5xx**: Errores del servidor  
+
+Ejemplos comunes:
+
+- 200 OK  
+- 301 Moved Permanently  
+- 302 Found  
+- 400 Bad Request  
+- 401 Unauthorized  
+- 403 Forbidden  
+- 404 Not Found  
+- 500 Internal Server Error  
+- 503 Service Unavailable  
+
+---
+
+## 9. Content-Type - Tipos principales
+
+- text/html - Documentos HTML  
+- text/plain - Texto sin formato  
+- text/css - Hojas de estilo  
+- application/javascript - JavaScript  
+- application/json - Datos en formato JSON  
+- application/xml - XML  
+- image/png, image/jpeg, image/gif - Imágenes  
+- multipart/form-data - Formularios con archivos adjuntos  
