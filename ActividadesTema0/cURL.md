@@ -1,4 +1,4 @@
-# Actividad 0.4 - Usando cURL
+# Actividad 0.4 - cURL
 
 ## 1. ¿Qué es cURL?
 
@@ -31,5 +31,6 @@ La opción '-L' permite que cURL siga las redirecciones HTTP hasta llegar al des
 ## 3. Recursos adicionales
 
 Para obtener más información sobre cURL y explorar más ejemplos, puedes consultar la documentación oficial:  
+
 
 Manual de cURL: https://curl.se/docs/manual.html
