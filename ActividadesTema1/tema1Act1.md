@@ -4,7 +4,7 @@
 
 Para instalar cualquier cosa en Ubuntu, primero es recomendable actualizar todo el sistema.  
 Ejecuta el siguiente comando:
-sudo apt update
+**sudo apt update**
 ![Descargando Apache](Apache_Instalacion/Apache1.PNG)
 Una vez se haya actualizado todo, procedemos a instalar Apache con:
 sudo apt install apache2
@@ -40,5 +40,6 @@ Primero, volvemos a hacer sudo apt update y luego sudo apt install curl
 ![Descargando Apache](Apache_Instalacion/Apache8.PNG)
 
 ![Descargando Apache](Apache_Instalacion/Apache9.PNG)
+
 
 
