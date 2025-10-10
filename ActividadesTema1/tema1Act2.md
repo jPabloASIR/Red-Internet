@@ -300,8 +300,8 @@ Antes:
 ![Iniciar Apache](Act2_imgs/paso10.2.PNG)
 
 Despues:
-![Iniciar Apache](Act2_imgs/paso10.3.PNG)
-(No le añadi los - y los + porque estaba haciendo una prueba para saber si Ubuntu lo reconocería igualmente o no. Al final resulta que no, hay que añadirselo obligatoriamente).
+![Iniciar Apache](Act2_imgs/paso10.92.PNG)
+
 
 Guardamos los cambios, salimos y reiniciamos apache. Puede que nos salga el siguiente aviso:
 ![Iniciar Apache](Act2_imgs/paso10.4.PNG)
@@ -312,7 +312,7 @@ Si nos sale, escribimos:
 
 Para comprobar si está desactivado o no la directiva Options, creamos un directorio sin index.html con mkdir:
 ![Iniciar Apache](Act2_imgs/paso10.5.PNG)
-(En esta imagen, Options sigue activado, porque no le puse **-,+** en apache2.conf y porque todavía no edité nada en 000-default.conf)
+(En esta imagen, Options sigue activado, porque todavía no edité nada en 000-default.conf)
 
 Como consecuencia, si intentamos abrir el directorio en nuestro navegador, aparece esto:
 ![Iniciar Apache](Act2_imgs/paso10.6.PNG)
@@ -320,13 +320,16 @@ Como consecuencia, si intentamos abrir el directorio en nuestro navegador, apare
 Esto no es lo que queremos, queremos un error 403 Forbidden.
 Vamos a editar el archivo 000-default.conf:
 **sudo nano /etc/apache2/sites-enabled/000-default.conf**
-![Iniciar Apache](Act2_imgs/paso10.8.PNG)
-(Denuevo, estaba probando si funcionaba sin los **-,+** más tarde me di cuenta de que eran absolutamente necesarios)
+![Iniciar Apache](Act2_imgs/paso10.93.PNG)
 
-Una vez hemos editado ambos archivos (agregando los - y +) si hacemos curl -I en nuestro directorio nos saldrá el error:
+
+Una vez hemos editado ambos archivos si hacemos curl -I en nuestro directorio nos saldrá el error:
 
 ![Iniciar Apache](Act2_imgs/paso10.91.PNG)
 
 Si lo buscamos en nuestro navegador saldrá el error también:
 ![Iniciar Apache](Act2_imgs/paso10.9.PNG)
+
+La directiva Options está finalmente desactivada.
+
 
