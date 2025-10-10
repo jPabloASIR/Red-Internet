@@ -290,6 +290,12 @@ Ahora abrimos nuestro navegador y escribimos:
 
 ## 10. ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
 
+La directiva Options controla las funciones permitidas en un directorio (por ejemplo: Indexes, FollowSymLinks, ExecCGI).
+Para poder buscar en qué archivos se encuentra, podemos buscarla con:
+
+**sudo grep -R "Options" /etc/apache2**
+Nos saldrá un listado.
+
 Para poder desactivar la directiva Options, deberemos desactivarla tanto de apache2.conf y 000-default.conf, por lo que necesitaremos editar esos ficheros:
 
 **sudo nano /etc/apache2/apache2.conf**
@@ -331,5 +337,6 @@ Si lo buscamos en nuestro navegador saldrá el error también:
 ![Iniciar Apache](Act2_imgs/paso10.9.PNG)
 
 La directiva Options está finalmente desactivada.
+
 
 
