@@ -16,3 +16,5 @@ Ejercicio | Descripción
 [Ejercicio1.1](/ActividadesTema1/tema1Act1.md) | Instalación de Apache en Ubuntu
 [Ejercicio1.2](/ActividadesTema1/tema1Act2.md) | Actividades Apache
 [Ejercicio1.2.2](/ActividadesTema1/tema1Act2.2.md) | Scripts Apache
+[Ejercicio1.3](/ActividadesTema1/tema1Act3.md) | Directivas básicas 1
+[Ejercicio1.4](/ActividadesTema1/tema1Act4.md) | Directivas básicas 2
