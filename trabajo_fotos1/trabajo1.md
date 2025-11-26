@@ -1,6 +1,6 @@
 # Práctica servidores web 1º Trimestre
 
-## 1. Instalación del servidor web apache. Dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python.
+## 1. Instalación del servidor web apache. Dos dominios mediante el archivo hosts. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python.
 
 Para instalar apache en ubuntu linux escribimos: **sudo apt install apache2** en la terminal.
 
@@ -77,7 +77,7 @@ De igual forma, podremos conectarnos a departamentos.centro.intranet (aplicació
 
 
 
-# Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
+## 2. Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
 
 Para poder agregar contraseñas a los usuarios, deberemos primero instalar el módulo: **sudo apt install apache2-utils -y**
 Una vez instalado, para asignar contraseñas a los usuarios es: **sudo htpasswd -c /etc/apache2/.htpasswd [nombre_del_usuario]
