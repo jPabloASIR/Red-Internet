@@ -5,72 +5,72 @@
 Para instalar apache en ubuntu linux escribimos: **sudo apt install apache2** en la terminal.
 
 A continuación, lo habilitamos con: **sudo systemctl enable --now apache2**
-[imagen1]
+![Descargando Apache](1&2&3&4&5/paso1.PNG)
 
 Con apache instalado y habilitado, ahora deberíamos de poder acceder al index.html que viene por defecto escribiendo la IP de nuestra VM en un buscador (podemos saber nuestra IP con **hostname -I**.
-[imagen2]
+![Descargando Apache](1&2&3&4&5/paso2.PNG)
 
 Para poder usar 2 dominios necesitamos editar el archivo hosts, para ello, lo abrimos con: **sudo nano /etc/hosts**
-[imagen3]
+![Descargando Apache](1&2&3&4&5/paso3.PNG)
 
 Una vez dentro, escribimos nuestra IP y al lado, los dominios (**centro.intranet y departamentos.centro.intranet**)
-[imagen995]
+![Descargando Apache](1&2&3&4&5/paso4.PNG)
 
 Una vez guardados los cambios, crearemos sus respectivos directorios y le daremos los permisos para que puedan ser leídos.
-[imagen5]
+![Descargando Apache](1&2&3&4&5/paso5.PNG)
 
 Ahora tenemos que crear los archivos para cada directorio:
-[imagen6]
+![Descargando Apache](1&2&3&4&5/paso6.PNG)
 
 Su contenido:
-[imagen7]
+![Descargando Apache](1&2&3&4&5/paso7.PNG)
 
 Hacemos lo mismo para el otro directorio:
-[imagen8]
+![Descargando Apache](1&2&3&4&5/paso8.PNG)
 
 Su contenido:
-[imagen9]
+![Descargando Apache](1&2&3&4&5/paso9.PNG)
 
 
 Ahora, para que podamos cargar nuestros scripts que necesitaremos para este trabajo y nuestras aplicaciones, deberemos instalar: **sudo apt install libapache2-mod-wsgi-py3 -y**
-[imagen91]
+![Descargando Apache](1&2&3&4&5/paso91.PNG)
 
 Con esto podremos crear ahora una aplicación.
-[imagen92]
+![Descargando Apache](1&2&3&4&5/paso92.PNG)
 
 Contenido de la aplicación:
-[imagen996]
+![Descargando Apache](1&2&3&4&5/paso996.PNG)
 
 A continuación, habilitamos centro.intranet y departamentos.centro.intranet.
-[imagen94]
+![Descargando Apache](1&2&3&4&5/paso94.PNG)
 
 Ahora debemos instalar el módulo para PHP
-[imagen95]
+![Descargando Apache](1&2&3&4&5/paso95.PNG)
 
-[imagen96]
+![Descargando Apache](1&2&3&4&5/paso96.PNG)
 
 
 Damos permisos a las directivas anteriormente creadas.
-[imagen97]
+![Descargando Apache](1&2&3&4&5/paso97.PNG)
 
 Instalar el módulo de mariadb: **sudo apt install mariadb-server -y**
-[imagen98]
+![Descargando Apache](1&2&3&4&5/paso98.PNG)
 
-[imagen99]
+![Descargando Apache](1&2&3&4&5/paso99.PNG)
 
-[imagen991]
+![Descargando Apache](1&2&3&4&5/paso991.PNG)
 
 Ahora procederemos a crear los usuarios para la base de datos, para ello nos conectamos a la DB como administrador.
-[imagen992]
+![Descargando Apache](1&2&3&4&5/paso992.PNG)
 
 Crearemos una DB dentro de mariadb, un usuario con permisos de administrador.
-[imagen993]
+![Descargando Apache](1&2&3&4&5/paso993.PNG)
 
 Con todo correctamente configurado, podremos conectarnos a centro.intranet (wordpress).
-[imagen994]
+![Descargando Apache](1&2&3&4&5/paso994.PNG)
 
 De igual forma, podremos conectarnos a departamentos.centro.intranet (aplicación python).
-[imagen997]
+![Descargando Apache](1&2&3&4&5/paso997.PNG)
 
 
 --
@@ -81,16 +81,16 @@ De igual forma, podremos conectarnos a departamentos.centro.intranet (aplicació
 
 Para poder agregar contraseñas a los usuarios, deberemos primero instalar el módulo: **sudo apt install apache2-utils -y**
 Una vez instalado, para asignar contraseñas a los usuarios es: **sudo htpasswd -c /etc/apache2/.htpasswd [nombre_del_usuario]
-[imagen1]
+![Descargando Apache](6/paso1.PNG)
 
 Además, le hice modificaciones al archivo de departamentos.centro.intranet.
-[imagen2]
+![Descargando Apache](6/paso2.PNG)
 
 Una vez realizados los cambios reiniciamos apache.
-[imagen3]
+![Descargando Apache](6/paso3.PNG)
 
 La próxima vez, al iniciar nos aparecerá lo siguiente:
-[imagen4]
+![Descargando Apache](6/paso4.PNG)
 
 Por lo tanto, funciona.
 
