@@ -73,7 +73,7 @@ De igual forma, podremos conectarnos a departamentos.centro.intranet (aplicació
 ![Descargando Apache](1&2&3&4&5/paso997.PNG)
 
 
---
+
 
 
 
@@ -95,7 +95,7 @@ La próxima vez, al iniciar nos aparecerá lo siguiente:
 Por lo tanto, funciona.
 
 
---
+
 
 
 
@@ -130,7 +130,7 @@ Comprobamos que funciona.
 
 
 
---
+
 
 
 
