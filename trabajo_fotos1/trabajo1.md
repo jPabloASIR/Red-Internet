@@ -1,4 +1,4 @@
-# Práctica servidores web 1º Trimestre
+# Práctica servidores web 1º Trimestre.
 
 ## 1. Instalación del servidor web apache. Dos dominios mediante el archivo hosts. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python.
 
@@ -77,7 +77,7 @@ De igual forma, podremos conectarnos a departamentos.centro.intranet (aplicació
 
 
 
-## 2. Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
+## 2. Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación.
 
 Para poder agregar contraseñas a los usuarios, deberemos primero instalar el módulo: **sudo apt install apache2-utils -y**
 Una vez instalado, para asignar contraseñas a los usuarios es: **sudo htpasswd -c /etc/apache2/.htpasswd [nombre_del_usuario]
@@ -99,6 +99,70 @@ Por lo tanto, funciona.
 
 
 
+## 3. Instala y configura awstat.
+
+Para instalar awstat escribimos en la terminal: **sudo apt install apache2 awstats libgeo-ip-perl libgeo-ipfree-perl -y**
+![Descargando Apache](7/paso1.PNG)
+
+Habilitamos el módulo cgi para que mueste contenido web y reiniciamos apache.
+![Descargando Apache](7/paso2.PNG)
+
+Crearemos un archivo para hospedar la web de centro.intranet
+![Descargando Apache](7/paso3.PNG)
+
+![Descargando Apache](7/paso4.PNG)
+
+Creamos también otro archivo para ejecutar scripts.
+![Descargando Apache](7/paso5.PNG)
+
+![Descargando Apache](7/paso91.PNG)
+
+Habilitamos todo y reiniciamos apache.
+![Descargando Apache](7/paso7.PNG)
+
+![Descargando Apache](7/paso8.PNG)
+
+Actualizamos awstat.
+![Descargando Apache](7/paso9.PNG)
+
+Comprobamos que funciona.
+![Descargando Apache](7/paso92.PNG)
 
 
 
+--
+
+
+
+Instalamos nginx: **sudo apt install nginx -y**
+![Descargando Apache](8/paso1.PNG)
+
+Creamos el archivo donde estará nuestro segundo servidor.
+![Descargando Apache](8/paso2.PNG)
+
+Su contenido:
+![Descargando Apache](8/paso3.PNG)
+
+phpinfo(); Es una función nativa de PHP que imprime en pantalla información detallada sobre la configuración del servidor, la versión de PHP, los módulos instalados, las variables de entorno y otras directivas de configuración.
+![Descargando Apache](8/paso4.PNG)
+
+Instalamos php: **sudo apt install php** (el resto es solo para instalar extensiones y demás)
+![Descargando Apache](8/paso5.PNG)
+
+Instalamos también phpmyadmin: **sudo apt install phpmyadmin -y**
+![Descargando Apache](8/paso6.PNG)
+
+Mientras se instala, nos pedirá configurarlo, primero lo configuramos con servidor web a apache2.
+![Descargando Apache](8/paso7.PNG)
+
+Le damos a Sí a configurar la base de datos para phpmyadmin.
+![Descargando Apache](8/paso8.PNG)
+
+Ahora le asignaremos una contraseña a phpmyadmin.
+![Descargando Apache](8/paso9.PNG)
+
+Comprobación de que funciona:
+![Descargando Apache](8/paso93.PNG)
+
+Vista desde un usuario dentro de phpmyadmin.
+![Descargando Apache](8/paso94.PNG)
