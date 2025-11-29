@@ -28,9 +28,9 @@
 
 
 ### Equivalente en Apache 2.4 con Require
-<Directory /var/www/example1>
-    Require ip 192.168.1.100
-</Directory>
+<Directory /var/www/example1>   
+    Require ip 192.168.1.100   
+</Directory>   
 
 ---
 
