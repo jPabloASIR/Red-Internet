@@ -10,9 +10,9 @@
 
 ### Configuración antigua 1
 **<Directory /var/www/example1>   
-    Order Deny,Allow   
-    Deny from All   
-    Allow from 192.168.1.100   
+        Order Deny,Allow   
+        Deny from All   
+        Allow from 192.168.1.100   
 </Directory>**   
 - Primero deniega todo, luego permite solo 192.168.1.100.  
 - Resultado: solo esa IP puede acceder.
