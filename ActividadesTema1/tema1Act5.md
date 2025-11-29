@@ -1,7 +1,7 @@
 # Configuración de Apache para dir1 y dir2
 
 ## 1. Creación de los directorios
-sudo mkdir -p /var/www/dir1
+**sudo mkdir -p /var/www/dir1**
 sudo mkdir -p /var/www/dir2
 
 ---
