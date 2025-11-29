@@ -9,20 +9,20 @@
 ## 2. Diferencia entre Order / Deny / Allow y Require (Apache 2.4)
 
 ### Configuración antigua 1
-<Directory /var/www/example1>
+**<Directory /var/www/example1>   
     Order Deny,Allow
     Deny from All
     Allow from 192.168.1.100
-</Directory>
+</Directory>**
 - Primero deniega todo, luego permite solo 192.168.1.100.  
 - Resultado: solo esa IP puede acceder.
 
 ### Configuración antigua 2
-<Directory /var/www/example1>
-    Order Allow,Deny
-    Deny from All
-    Allow from 192.168.1.100
-</Directory>
+**<Directory /var/www/example1>   
+    Order Allow,Deny   
+    Deny from All   
+    Allow from 192.168.1.100   
+</Directory>**
 - Primero permite, luego deniega.  
 - Resultado: se niega todo, incluso 192.168.1.100.
 
@@ -54,9 +54,10 @@ Primero nos metemos dentro del archivo 000-default.conf
         Require not ip 10.3.0.101
     </RequireAll>
 </Directory>
+
 ![Descargando Apache](Act5/Paso3.PNG)
 ![Descargando Apache](Act5/Paso4.PNG)
----
+
 
 ## 4. Configuración de dir2
 
@@ -77,4 +78,5 @@ Primero nos metemos dentro del archivo 000-default.conf
         </RequireNone>
     </RequireAll>
 </Directory>
+
 ![Descargando Apache](Act5/Paso5.PNG)
