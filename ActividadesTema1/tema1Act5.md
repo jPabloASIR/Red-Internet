@@ -3,7 +3,7 @@
 ## 1. Creación de los directorios
 **sudo mkdir -p /var/www/dir1**  
 **sudo mkdir -p /var/www/dir2**
-
+![Descargando Apache](Act5/Paso1.PNG)
 ---
 
 ## 2. Diferencia entre Order / Deny / Allow y Require (Apache 2.4)
@@ -26,6 +26,7 @@
 - Primero permite, luego deniega.  
 - Resultado: se niega todo, incluso 192.168.1.100.
 
+
 ### Equivalente en Apache 2.4 con Require
 <Directory /var/www/example1>
     Require ip 192.168.1.100
@@ -34,7 +35,8 @@
 ---
 
 ## 3. Configuración de dir1
-
+Primero nos metemos dentro del archivo 000-default.conf
+![Descargando Apache](Act5/Paso2.PNG)
 ### Requisitos
 - Permitir acceso desde 10.3.0.100
 - Permitir acceso desde marisma.intranet
@@ -52,7 +54,8 @@
         Require not ip 10.3.0.101
     </RequireAll>
 </Directory>
-
+![Descargando Apache](Act5/Paso3.PNG)
+![Descargando Apache](Act5/Paso4.PNG)
 ---
 
 ## 4. Configuración de dir2
@@ -62,17 +65,7 @@
 - No permitir acceso desde marisma.intranet
 
 ### Configuración
-<Directory /var/www/dir2>
-    Options Indexes FollowSymLinks
-    AllowOverride All
 
-    <RequireAll>
-        Require ip 10.0.0.0/8
-        Require not host marisma.intranet
-    </RequireAll>
-</Directory>
-
-> Alternativa compatible en todas las versiones 2.4:
 <Directory /var/www/dir2>
     Options Indexes FollowSymLinks
     AllowOverride All
@@ -84,4 +77,4 @@
         </RequireNone>
     </RequireAll>
 </Directory>
-
+![Descargando Apache](Act5/Paso5.PNG)
