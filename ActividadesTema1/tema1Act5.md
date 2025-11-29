@@ -67,9 +67,9 @@ Primero nos metemos dentro del archivo 000-default.conf
 
 ### Configuración
 
-<Directory /var/www/dir2>
-    Options Indexes FollowSymLinks
-    AllowOverride All
+<Directory /var/www/dir2>   
+    Options Indexes FollowSymLinks   
+    AllowOverride All   
 
     <RequireAll>
         Require ip 10.0.0.0/8
