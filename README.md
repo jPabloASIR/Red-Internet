@@ -20,6 +20,7 @@ Ejercicio | Descripción
 [Ejercicio1.4](/ActividadesTema1/tema1Act4.md) | Directivas básicas 2
 [Ejercicio1.5](/ActividadesTema1/tema1Act5.md) | Directorios dir1 y dir2
 [Ejercicio1.6](/ActividadesTema1/tema1Act6.md) | Directorios dir1 y dir2
+[Ejercicio1.7](/ActividadesTema1/tema1Act7.md) | Directorios dir1 y dir2
 
 
 
