@@ -21,6 +21,7 @@ Ejercicio | Descripción
 [Ejercicio1.5](/ActividadesTema1/tema1Act5.md) | Directorios dir1 y dir2
 [Ejercicio1.6](/ActividadesTema1/tema1Act6.md) | Expresiones regulares
 [Ejercicio1.7](/ActividadesTema1/tema1Act7.md) | Reescritura de URLs con Apache y PHP
+[Ejercicio1.8](/ActividadesTema1/tema1Act8.md) | Configurar Virtual Host de Apache en Ubuntu
 
 
 
