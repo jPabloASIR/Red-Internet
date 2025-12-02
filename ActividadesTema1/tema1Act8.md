@@ -30,6 +30,8 @@ El primer paso que necesitamos es crear la estructura de directorios que mantend
 sudo mkdir -p /var/www/ejemplo.com/public_html
 sudo mkdir -p /var/www/pruebas.com/public_html
 ```
+![Descargando Apache](Act8/Paso1.PNG)
+
 
 # Paso Dos - Otorgar Permisos
 ```bash
@@ -37,6 +39,8 @@ sudo chown -R $USER:$USER /var/www/ejemplo.com/public_html
 sudo chown -R $USER:$USER /var/www/pruebas.com/public_html
 sudo chmod -R 755 /var/www
 ```
+![Descargando Apache](Act8/Paso2.PNG)
+![Descargando Apache](Act8/Paso3.PNG)
 
 # Paso Tres — Crear una Página de Prueba
 Editar el archivo:
@@ -44,6 +48,7 @@ Editar el archivo:
 ```bash
 nano /var/www/ejemplo.com/public_html/index.html
 ```
+![Descargando Apache](Act8/Paso4.PNG)
 
 Contenido ejemplo:
 
@@ -57,6 +62,7 @@ Contenido ejemplo:
   </body>
 </html>
 ```
+![Descargando Apache](Act8/Paso5.PNG)
 
 Copiar para el segundo sitio:
 
@@ -64,6 +70,7 @@ Copiar para el segundo sitio:
 cp /var/www/ejemplo.com/public_html/index.html /var/www/pruebas.com/public_html/index.html
 nano /var/www/pruebas.com/public_html/index.html
 ```
+![Descargando Apache](Act8/Paso6.PNG)
 
 Modificar a:
 
@@ -77,6 +84,7 @@ Modificar a:
   </body>
 </html>
 ```
+![Descargando Apache](Act8/Paso7.PNG)
 
 # Paso Cuatro — Crear Archivos Virtual Host
 Copiar la plantilla:
@@ -85,7 +93,8 @@ Copiar la plantilla:
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/ejemplo.com.conf
 sudo nano /etc/apache2/sites-available/ejemplo.com.conf
 ```
-
+![Descargando Apache](Act8/Paso8.PNG)
+![Descargando Apache](Act8/Paso9.PNG)
 Contenido esperado:
 
 ```apache
@@ -98,6 +107,9 @@ Contenido esperado:
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+![Descargando Apache](Act8/Paso91.PNG)
+![Descargando Apache](Act8/Paso92.PNG)
+![Descargando Apache](Act8/Paso93.PNG)
 
 Copiar para el segundo dominio:
 
@@ -105,6 +117,8 @@ Copiar para el segundo dominio:
 sudo cp /etc/apache2/sites-available/ejemplo.com.conf /etc/apache2/sites-available/pruebas.com.conf
 sudo nano /etc/apache2/sites-available/pruebas.com.conf
 ```
+![Descargando Apache](Act8/Paso94.PNG)
+![Descargando Apache](Act8/Paso95.PNG)
 
 Modificar a:
 
@@ -118,6 +132,7 @@ Modificar a:
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+![Descargando Apache](Act8/Paso96.PNG)
 
 # Paso Cinco — Habilitar los Virtual Hosts
 ```bash
@@ -125,6 +140,7 @@ sudo a2ensite ejemplo.com.conf
 sudo a2ensite pruebas.com.conf
 sudo service apache2 restart
 ```
+![Descargando Apache](Act8/Paso97.PNG)
 
 Es posible ver este mensaje (no afecta nada):
 
@@ -145,6 +161,7 @@ Agregar:
 111.111.111.111 ejemplo.com
 111.111.111.111 pruebas.com
 ```
+![Descargando Apache](Act8/Paso98.PNG)
 
 # Paso Siete — Probar
 Visitar:
@@ -153,5 +170,8 @@ Visitar:
 http://ejemplo.com
 http://pruebas.com
 ```
+![Descargando Apache](Act8/Paso99.PNG)
+![Descargando Apache](Act8/Paso991.PNG)
+
 
 Deberás ver las páginas de prueba configuradas anteriormente.
