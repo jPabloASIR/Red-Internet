@@ -1,9 +1,9 @@
 ## 1. Crear los usuarios del sistema
-sudo useradd usuario1
-sudo useradd usuario2
-sudo useradd usuario3
-sudo useradd usuario4
-sudo useradd usuario5
+sudo useradd usuario1  
+sudo useradd usuario2  
+sudo useradd usuario3  
+sudo useradd usuario4  
+sudo useradd usuario5  
 ![Descargando Apache](Act9/Paso1.PNG)
 
 ## 2. Crear los grupos y añadir los usuarios
