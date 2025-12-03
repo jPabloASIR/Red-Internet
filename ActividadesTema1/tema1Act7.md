@@ -15,10 +15,10 @@ Su contenido:
 
 Editamos **/etc/apache2/sites-available/000-default.conf**:
 ![Descargando Apache](Act7/Paso4.PNG)
-# RewriteEngine On -> activa el módulo de reescritura.   
-# RewriteBase /actividad/ -> establece la base de la URL que se va a reescribir.   
-# RewriteRule ^([a-z]+)/([0-9]+)/([0-9]+)$ ... -> captura la operación y dos números de la URL y los pasa como parámetros GET a operacion.php.   
-# [L] -> indica que si coincide esta regla, no se aplicarán más reglas.   
+### RewriteEngine On -> activa el módulo de reescritura.   
+### RewriteBase /actividad/ -> establece la base de la URL que se va a reescribir.   
+### RewriteRule ^([a-z]+)/([0-9]+)/([0-9]+)$ ... -> captura la operación y dos números de la URL y los pasa como parámetros GET a operacion.php.   
+### [L] -> indica que si coincide esta regla, no se aplicarán más reglas.   
 
 
 ---
