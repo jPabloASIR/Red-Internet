@@ -1,13 +1,3 @@
-# Introducción
-El servidor web de Apache es uno de los más populares para proveer contenido web en Internet. Cuenta con más de la mitad de todos los sitios web activos en la red y es extremadamente poderoso y flexible.
-
-Apache divide su funcionalidad y componentes en unidades independientes que pueden ser configuradas independientemente. La unidad básica que describe un sitio individual o el dominio llamado *virtual host*.
-
-Estas asignaciones permiten al administrador utilizar un servidor para alojar varios dominios o sitios en una simple interface o IP utilizando un mecanismo de coincidencias. Esto es relevante para cualquiera que busque alojamiento para más de un sitio en un solo VPS.
-
-Cada dominio que es configurado apuntará al visitante a una carpeta específica que contiene la información del sitio, nunca indicará que el mismo servidor es responsable de otros sitios. Este esquema es expandible sin límites de software tanto como el servidor pueda soportar la carga.
-
-En esta guía, te diremos cómo puedes configurar tus virtual hosts de Apache en tu VPS con Ubuntu 14.04. Durante este proceso, aprenderás cómo configurar diferente contenido para diferentes visitantes dependiendo del dominio que soliciten.
 
 # Pre-Requisitos
 Antes de empezar este tutorial, deberías crear un usuario no-root siguiendo los pasos del 1 al 4 en esa guía.
@@ -23,7 +13,7 @@ Después de completar estos pasos, podemos empezar.
 
 Para propósitos de esta guía, mi configuración creará un virtual host para **ejemplo.com** y otro para **pruebas.com**. Se hará referencia a ellos en esta guía, pero tú deberías sustituirlos por tus propios dominios durante el proceso.
 
-# Paso Uno - Crear la Estructura del Directorio
+# 1. Crear la Estructura del Directorio
 El primer paso que necesitamos es crear la estructura de directorios que mantendrán la información de nuestro sitio.
 
 ```bash
@@ -33,7 +23,7 @@ sudo mkdir -p /var/www/pruebas.com/public_html
 ![Descargando Apache](Act8/Paso1.PNG)
 
 
-# Paso Dos - Otorgar Permisos
+# 2. Otorgar Permisos
 ```bash
 sudo chown -R $USER:$USER /var/www/ejemplo.com/public_html
 sudo chown -R $USER:$USER /var/www/pruebas.com/public_html
@@ -42,7 +32,7 @@ sudo chmod -R 755 /var/www
 ![Descargando Apache](Act8/Paso2.PNG)
 ![Descargando Apache](Act8/Paso3.PNG)
 
-# Paso Tres — Crear una Página de Prueba
+# 3. Crear una Página de Prueba
 Editar el archivo:
 
 ```bash
@@ -86,7 +76,7 @@ Modificar a:
 ```
 ![Descargando Apache](Act8/Paso7.PNG)
 
-# Paso Cuatro — Crear Archivos Virtual Host
+# 4. Crear Archivos Virtual Host
 Copiar la plantilla:
 
 ```bash
@@ -134,7 +124,7 @@ Modificar a:
 ```
 ![Descargando Apache](Act8/Paso96.PNG)
 
-# Paso Cinco — Habilitar los Virtual Hosts
+# 5. Habilitar los Virtual Hosts
 ```bash
 sudo a2ensite ejemplo.com.conf
 sudo a2ensite pruebas.com.conf
@@ -148,7 +138,7 @@ Es posible ver este mensaje (no afecta nada):
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name...
 ```
 
-# Paso Seis — Configurar el archivo hosts local (Opcional)
+# 6. Configurar el archivo hosts local
 En Linux/Mac:
 
 ```bash
@@ -163,7 +153,7 @@ Agregar:
 ```
 ![Descargando Apache](Act8/Paso98.PNG)
 
-# Paso Siete — Probar
+# 7. Comprobación
 Visitar:
 
 ```
@@ -174,4 +164,4 @@ http://pruebas.com
 ![Descargando Apache](Act8/Paso991.PNG)
 
 
-Deberás ver las páginas de prueba configuradas anteriormente.
+
