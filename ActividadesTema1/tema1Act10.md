@@ -46,7 +46,7 @@ sudo tee /etc/apache2/sites-available/mivm-ssl.conf > /dev/null <<EOL
     RewriteEngine On
     RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
     </VirtualHost>
-    EOL
+    
 
 ## 6️⃣ Habilitar módulos y sitio en Apache
 sudo a2enmod ssl
