@@ -3,25 +3,24 @@
 
 
 
-## 1️⃣ Actualizar e instalar Apache y OpenSSL
-sudo apt update && sudo apt upgrade -y
-sudo apt install apache2 openssl ufw -y
+## 1. Instalar OpenSSL
+sudo a2enmod ssl
+sudo systemctl restart apache2
+![Descargando Apache](Act10/Paso1.PNG)
 
-## 2️⃣ Crear clave privada para certificado autofirmado
-sudo mkdir -p /etc/ssl/private /etc/ssl/certs
-sudo openssl genrsa -out /etc/ssl/private/apache-selfsigned.key 2048
 
-## 3️⃣ Crear certificado autofirmado (válido 365 días)
+## 2. Crear certificado autofirmado (válido 365 días)
     sudo openssl req -x509 -key /etc/ssl/private/apache-selfsigned.key \
     -out /etc/ssl/certs/apache-selfsigned.crt -days 365 \
     -subj "/C=ES/ST=Estado/L=Ciudad/O=MiOrganizacion/CN=mivm.no-ip.org"
+![Descargando Apache](Act10/Paso2.PNG)
+![Descargando Apache](Act10/Paso5.PNG)
+![Descargando Apache](Act10/Paso5.5.PNG)
 
-## 4️⃣ Ajustar permisos de los certificados
-sudo chmod 600 /etc/ssl/private/apache-selfsigned.key
-sudo chmod 644 /etc/ssl/certs/apache-selfsigned.crt
 
-## 5️⃣ Crear VirtualHost SSL
+## 3. Crear VirtualHost SSL
 sudo tee /etc/apache2/sites-available/mivm-ssl.conf > /dev/null <<EOL
+![Descargando Apache](Act10/Paso3.PNG)
 
     <VirtualHost *:443>
     ServerName mivm.no-ip.org
@@ -47,21 +46,17 @@ sudo tee /etc/apache2/sites-available/mivm-ssl.conf > /dev/null <<EOL
     RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
     </VirtualHost>
     
+![Descargando Apache](Act10/Paso7.PNG)
 
-## 6️⃣ Habilitar módulos y sitio en Apache
-sudo a2enmod ssl
-sudo a2enmod rewrite
-sudo a2ensite mivm-ssl.conf
-sudo systemctl reload apache2
+## 4. Instalar Certbot
+![Descargando Apache](Act10/Paso6.PNG)
 
-## 7️⃣ Configurar firewall para HTTP y HTTPS
-sudo ufw allow 80
-sudo ufw allow 443
-sudo ufw enable
-sudo ufw status
+![Descargando Apache](Act10/Paso9.PNG)
 
-## 8️⃣ Configurar /etc/hosts para pruebas locales
+## 5. Configurar /etc/hosts para pruebas locales
 Edita /etc/hosts en la VM o en tu máquina cliente y añade:
 10.4.0.238   mivm.no-ip.org
+
+![Descargando Apache](Act10/Paso91.PNG)
 
 
