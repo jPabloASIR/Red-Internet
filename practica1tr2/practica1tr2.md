@@ -2,87 +2,70 @@
 
 ## 0. Instalar todo lo que necesitamos
 
-![Descargando Apache](pasos/0.PNG)
+![Trabajo1](pasos/0.PNG)
+![Trabajo1](pasos/1.PNG)
 
-## 1. Limpieza y Reinstalación de Bind9
+## 1. Copiar base de datos de Bind9
 
 sudo apt update  
 sudo apt purge -y bind9 bind9utils bind9-doc  
 sudo rm -rf /etc/bind  
 sudo rm -rf /var/cache/bind  
 sudo apt install -y bind9 bind9utils  
+sudo cp /etc/bind/db.local /etc/bind/db.marisma.local
+![Trabajo1](pasos/2.PNG)
 
-## 2. Configuración de DNS y Resolución
+## 2. Configurar los archivos (crear_subdominio.sh, crear_vhost.sh y crear_db.sh) y otorgarle permisos
 
-### Forzar resolución local en el archivo hosts
-echo "192.168.206.201 marisma.local pablo.marisma.local pepe.marisma.local" | sudo tee -a /etc/hosts
+![Trabajo1](pasos/3.PNG)
 
-### Configurar el servidor de nombres prioritario
-sudo rm /etc/resolv.conf  
-echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf  
+![Trabajo1](pasos/4.PNG)
+![Trabajo1](pasos/5.PNG)
+![Trabajo1](pasos/5.2.PNG)
+![Trabajo1](pasos/6.PNG)
+![Trabajo1](pasos/7.PNG)
 
-### Configuración de zona en Bind9
-## Añadir zona "marisma.local" en /etc/bind/named.conf.local
+### Comprobación de que todo está activo y sin errores:
+![Trabajo1](pasos/7.2.PNG)
+![Trabajo1](pasos/7.3.PNG)
 
-### Configuración del archivo de datos de zona
-sudo cp /etc/bind/db.local /etc/bind/db.marisma.local  
-sudo nano /etc/bind/db.marisma.local  
+## 3. Crear usuario pablo con IP de la VM
 
-### Verificación y reinicio de servicios
-sudo named-checkzone marisma.local /etc/bind/db.marisma.local  
-sudo systemctl restart bind9  
-sudo systemctl stop systemd-resolved  
+![Trabajo1](pasos/8.PNG)
 
-## 3. Servidor Web (Apache2) y phpMyAdmin
+## 4. Crear base de datos para el usuario pablo
 
-### Instalación de la pila LAMP
-sudo apt install apache2 mariadb-server php libapache2-mod-php php-mysql -y
+![Trabajo1](pasos/9.PNG)
 
-### Instalación y vinculación de phpMyAdmin
-sudo apt install phpmyadmin -y  
-sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf  
-sudo a2enconf phpmyadmin  
-sudo systemctl restart apache2  
+## 4. Generar la configuración de apache para pablo
 
-## 4. Ejecución de Scripts de Automatización
+![Trabajo1](pasos/91.PNG)
 
-### Asignación de permisos
-chmod +x crear_subdominio.sh crear_vhost.sh crear_db.sh
+## 5. Comprobamos que nuestra VM conoce a marisma.local y habilitamos la configuración de phpmyadmin
+![Trabajo1](pasos/92.PNG)
 
-### Ejecución para el usuario de ejemplo
-sudo ./crear_subdominio.sh pablo 192.168.206.201  
-sudo ./crear_vhost.sh pablo  
-sudo ./crear_db.sh pablo  
+![Trabajo1](pasos/93.PNG)
 
-## 5. Configuración de FTP Seguro (TLS)
+## 6. Instalar servidor FTP
 
-### Instalación de ProFTPD
-sudo apt install proftpd -y
+![Trabajo1](pasos/94.PNG)
 
-### Configuración de seguridad (DefaultRoot)
-### Paso: Editar /etc/proftpd/proftpd.conf y activar DefaultRoot ~
+### Tenemos que quitar la # de 'Default Root -'
+![Trabajo1](pasos/95.PNG)
 
-### Generación del certificado SSL para TLS
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/proftpd.key -out /etc/ssl/certs/proftpd.crt
+### También tenemos que configurar el archivo tls.conf con lo siguiente:
+![Trabajo1](pasos/96.PNG)
 
-### Activación del módulo TLS
-### Configurar /etc/proftpd/tls.conf con certificados y TLSRequired on
-### Descomentar Include de tls.conf en proftpd.conf
+## 7. Añadir usuario y habilitar el módulo del servidor web de apache
 
-sudo systemctl restart proftpd
+![Trabajo1](pasos/97.PNG)
 
-## 6. Soporte de Aplicaciones Python
+![Trabajo1](pasos/98.PNG)
 
-sudo apt install libapache2-mod-wsgi-py3 -y  
-sudo a2enmod wsgi  
-sudo systemctl restart apache2  
+## 8. Comprobaciones de que todo funciona:
 
-## 7. Gestión de Usuarios y Privilegios
+![Trabajo1](pasos/end1.PNG)
 
-### Creación del usuario en el sistema operativo
-sudo useradd -m -s /bin/bash pablo  
-echo "pablo:1177asdd" | sudo chpasswd  
+![Trabajo1](pasos/end2.PNG)
 
-### Asignación de permisos sobre el DocumentRoot
-sudo chown -R pablo:pablo /var/www/html/pablo  
-sudo chmod -R 755 /var/www/html/pablo  
+![Trabajo1](pasos/end3.PNG)
