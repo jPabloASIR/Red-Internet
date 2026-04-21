@@ -2,7 +2,7 @@
 
 ## 0. Instalar todo lo que necesitamos
 
-![Descargando Apache](practica1tr2/pasos/0.PNG)
+![Descargando Apache](pasos/0.PNG)
 
 ## 1. Limpieza y Reinstalación de Bind9
 
