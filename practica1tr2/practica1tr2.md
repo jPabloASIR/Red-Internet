@@ -1,5 +1,9 @@
 # Memoria de Configuración: Servidor marisma.local
 
+## 0. Instalar todo lo que necesitamos
+
+![Descargando Apache](practica1tr2/pasos/1.png)
+
 ## 1. Limpieza y Reinstalación de Bind9
 
 sudo apt update
