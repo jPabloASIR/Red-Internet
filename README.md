@@ -32,3 +32,8 @@ Ejercicio | Descripción
 Ejercicio | Descripción
 ----------|------------
 [Trabajo](/trabajo_fotos1/trabajo1.md) | Trabajo 1º Trimestre
+
+# Trabajo 1ºTrimestre
+Ejercicio | Descripción
+----------|------------
+[Trabajo](/practica1tr2/practica1tr2.md) | Trabajo 1 - 2º Trimestre
