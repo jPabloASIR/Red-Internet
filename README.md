@@ -40,6 +40,7 @@ Ejercicio | Descripción
 #Tema 1
 Ejercicio | Descripción
 ----------|------------
+[DNS6](/dns5/dns5.md) | Actividad DNS5
 [DNS6](/dns6/dns6.md) | Actividad DNS6
 [DNS8](/dns8/dns8.md) | Actividad DNS8
 
