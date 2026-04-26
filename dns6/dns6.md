@@ -2,25 +2,22 @@
 
 Este documento describe el procedimiento simplificado para la configuración de un servidor DNS autoritario (BIND9) en un entorno Ubuntu.
 
-## 1. Instalación del servicio
-Se procede a la actualización de los repositorios y a la instalación del paquete BIND9 junto con sus utilidades de gestión.
-
 ## 2. Definición de zonas en el servidor
-Se edita el archivo de configuración local para declarar la zona directa del dominio `marisma.intranet` y su correspondiente zona de resolución inversa, vinculando cada una a su respectivo fichero de base de datos.
-
+Se edita el archivo de configuración local para declarar la zona directa del dominio `marisma.intranet` y su correspondiente zona de resolución inversa, vinculando cada una a su respectivo fichero de base de datos.  
+![Trabajo1](pasos/1.PNG)
 ## 3. Configuración de registros en zona directa
-En el fichero de base de datos para la zona directa, se definen los parámetros del registro SOA y se añaden los registros de tipo NS y MX. Asimismo, se configuran los registros A para los FQDN solicitados:
-- Servidor DNS (ns1)
-- Servidor FTP (ftp1)
-- Servidores de correo (mail1, mail2)
-- Servidores web (www, departamentos)
-
+En el fichero de base de datos para la zona directa, se definen los parámetros del registro SOA y se añaden los registros de tipo NS y MX. Asimismo, se configuran los registros A para los FQDN solicitados:  
+- Servidor DNS (ns1)  
+- Servidor FTP (ftp1)  
+- Servidores de correo (mail1, mail2)  
+- Servidores web (www, departamentos)  
+![Trabajo1](pasos/2.PNG)
 ## 4. Configuración de registros en zona inversa
-Se crea el fichero de zona inversa para permitir la resolución de direcciones IP a nombres de dominio, añadiendo los registros PTR necesarios para el direccionamiento de la red local.
-
+Se crea el fichero de zona inversa para permitir la resolución de direcciones IP a nombres de dominio, añadiendo los registros PTR necesarios para el direccionamiento de la red local.  
+![Trabajo1](pasos/3.PNG)
 ## 5. Configuración del cliente
-Se modifica el fichero de resolución de nombres del sistema para que las consultas DNS se dirijan al servidor configurado. En caso de conflictos entre la resolución de red y las herramientas de diagnóstico, se ajusta el orden de prioridad de búsqueda en la configuración de hosts del sistema.
-
+Se modifica el fichero de resolución de nombres del sistema para que las consultas DNS se dirijan al servidor configurado. En caso de conflictos entre la resolución de red y las herramientas de diagnóstico, se ajusta el orden de prioridad de búsqueda en la configuración de hosts del sistema.  
+![Trabajo1](pasos/4.PNG)
 ## 6. Verificación de funcionamiento
 Tras reiniciar el servicio para aplicar los cambios, se realizan las pruebas de resolución para validar el correcto despliegue de los siguientes registros:
 - SOA (Autoridad de la zona)
@@ -28,3 +25,7 @@ Tras reiniciar el servicio para aplicar los cambios, se realizan las pruebas de 
 - NS (Servidores de nombres)
 - A (Resolución de nombres a IP)
 - PTR (Resolución inversa)
+![Trabajo1](pasos/5.PNG)
+
+## Comprobación Log
+![Trabajo1](pasos/6.PNG)
