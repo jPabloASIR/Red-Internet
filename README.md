@@ -33,7 +33,17 @@ Ejercicio | Descripción
 ----------|------------
 [Trabajo](/trabajo_fotos1/trabajo1.md) | Trabajo 1º Trimestre
 
-# Trabajo 1ºTrimestre
+
+
+
+
+#Tema 1
+Ejercicio | Descripción
+----------|------------
+[DNS6](/dns6/dns6.md) | Actividad DNS6
+[DNS8](/dns8/dns8.md) | Actividad DNS8
+
+# Trabajo 2ºTrimestre
 Ejercicio | Descripción
 ----------|------------
 [Trabajo](/practica1tr2/practica1tr2.md) | Trabajo 1 - 2º Trimestre
