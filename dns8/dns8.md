@@ -5,15 +5,15 @@ Este documento detalla el procedimiento realizado para configurar el subdominio 
 ## 1. Declaración de la Zona Principal
 En el archivo de configuración local, se asegura la existencia de la zona para el dominio base.
 
-* **Archivo:** `/etc/bind/named.conf.local`
-* [cite_start]**Acción:** Definir la zona `iesmarisma.intranet` apuntando al archivo de base de datos correspondiente[cite: 17, 18].
+* **Archivo:** `/etc/bind/named.conf.local`  
+![Trabajo1](pasos/1.PNG)
 
 ## 2. Configuración del Archivo de Zona (Subdominio Virtual)
 Se utiliza el método de subdominio virtual para integrar los nuevos registros en el fichero del dominio principal.
 
 * **Archivo:** `/etc/bind/db.iesmarisma.intranet`
-* [cite_start]**Acción:** Añadir registros tipo `A` para los hosts del dominio principal (`www`, `ftp`, `smtp`) y para los hosts del subdominio (`www.informatica`, `ftp.informatica`, `smtp.informatica`) vinculándolos a la IP del servidor[cite: 19, 20, 21, 23].
-
+* [cite_start]**Acción:** Añadir registros tipo `A` para los hosts del dominio principal (`www`, `ftp`, `smtp`) y para los hosts del subdominio (`www.informatica`, `ftp.informatica`, `smtp.informatica`) vinculándolos a la IP del servidor.  
+![Trabajo1](pasos/2.PNG)
 ## 3. Aplicación de Cambios y Reinicio
 Para que la nueva configuración surta efecto, es necesario reiniciar el servicio DNS.
 
@@ -22,10 +22,5 @@ Para que la nueva configuración surta efecto, es necesario reiniciar el servici
 ## 4. Verificación de Resolución
 Se comprueba que el servidor responde correctamente a las consultas del subdominio.
 
-* [cite_start]**Comando:** `dig @<IP_DNS> www.informatica.iesmarisma.intranet`[cite: 32].
+![Trabajo1](pasos/3.PNG)
 
-## 5. Ajuste de Prioridad en el Sistema (Opcional)
-Si el DNS resuelve correctamente pero herramientas como `ping` o el navegador fallan, se ajusta la prioridad de resolución del sistema operativo.
-
-* **Archivo:** `/etc/nsswitch.conf`
-* [cite_start]**Acción:** Modificar la línea de `hosts` para establecer el orden `files dns`, eliminando o postergando `mdns`[cite: 41, 42, 43, 46].
